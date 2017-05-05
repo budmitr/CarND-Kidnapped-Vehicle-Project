@@ -44,7 +44,7 @@ void ParticleFilter::prediction(double delta_t, double std_pos[], double velocit
     double yaw_dt = yaw_rate * delta_t;
 
     for (int i = 0; i < particles.size(); i++) {
-        if (fabs(yaw_rate) < 0.001) {
+        if (fabs(yaw_rate) < 0.00001) {
             particles[i].x +=  velocity * std::cos(particles[i].theta * delta_t);
             particles[i].y +=  velocity * std::sin(particles[i].theta * delta_t);
         }
